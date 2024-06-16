@@ -37,9 +37,10 @@ def find_most_similar_documents(df, query):
     top_documents.reset_index(drop=True, inplace=True)
     
     return top_documents
+import os
+api_key = os.getenv('OPENAI_API_KEY')
 
-
-client = openai.OpenAI(api_key="sk-proj-vU5bopgsnn5bz7SQIzP2T3BlbkFJCQJLlrsMFUvOQJKglD2I")
+client = openai.OpenAI(api_key=api_key)
 
 # get_embedding 함수 정의
 def get_embedding(text):
